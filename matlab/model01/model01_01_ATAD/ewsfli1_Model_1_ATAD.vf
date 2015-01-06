@@ -1,0 +1,132 @@
+<?xml version="1.0" ?> 
+<VectorField Name="ewsfli1_Model_1_ATAD" Description="EWS-FLI1 knockdown model 01_01_02">
+
+	<StateVariable 
+		Name="EWS_r"
+		Description="EWS mRNA" 
+		Formula="-m1*EWS_r - d1*EWS_r + a1"
+		DefaultInitialCondition="50" />
+
+	<StateVariable 
+		Name="EWS_p" 
+		Description="EWS protein" 
+		Formula="t1*EWS_r - d2*EWS_p" 
+		DefaultInitialCondition="99.9" />
+
+	<StateVariable 
+		Name="E2F3_r" 
+		Description="E2F3 mRNA" 
+		Formula="E2F3_dTotal*(k1*EWS_p*c2 + k2*E2F3_p*c1) / (EWS_p*c2 + E2F3_p*c1 + c1*c2 ) - d3*E2F3_r" 
+		DefaultInitialCondition="41.6" />
+
+	<StateVariable 
+		Name="E2F3_p" 
+		Description="E2F3 protein" 
+		Formula="t2*E2F3_r - d4*E2F3_p" 
+		DefaultInitialCondition="83.2" />
+
+	<StateVariable 
+		Name="ATAD_r" 
+		Description="E2F3 target gene mRNA" 
+		Formula="ATAD_dTotal*(k3*EWS_p*c4 + k4*E2F3_p*c3) / (EWS_p*c4 + E2F3_p*c3 + c3*c4 ) - d5*ATAD_r" 
+		DefaultInitialCondition="81.4" />
+    
+    <SteadyStateParams
+        ExcludeList="m1" />
+ 
+    <Parameter 
+		Name="a1" 
+		Description="EWS transcription rate times EWS dna concentration"
+		DefaultValue="30" />
+
+	<Parameter 
+		Name="m1" 
+		Description="Total shRNA times kinetic constant" 
+		DefaultValue="3"/>
+    
+	<Parameter 
+		Name="d1" 
+		Description="EWS_r degradation rate constant" 
+		DefaultValue="0.5" />
+	
+	<Parameter 
+		Name="t1" 
+		Description="EWS translation rate constant" 
+		DefaultValue="1" />
+		
+	<Parameter 
+		Name="d2" 
+		Description="EWS_p degradation rate constant" 
+		DefaultValue="0.5" />
+	
+	<Parameter 
+		Name="E2F3_dTotal" 
+		Description="Total concentration of E2F3 DNA" 
+		DefaultValue="10" />
+		
+	<Parameter 
+		Name="k1" 
+		Description="EWS mediated E2F3 transcription rate constant" 
+		DefaultValue="3" />
+		
+	<Parameter 
+		Name="c1" 
+		Description="EWS - E2F3 (dis-)association ratio" 
+		DefaultValue="1" />
+
+	<Parameter 
+		Name="k2" 
+		Description="E2F3 self-regulation transcription rate constant" 
+		DefaultValue="1" />
+
+	<Parameter 
+		Name="c2" 
+		Description="E2F3_p E2F3_d (dis-)association ratio" 
+		DefaultValue="1" />
+	
+	<Parameter 
+		Name="d3" 
+		Description="E2F3_r degradation rate constant" 
+		DefaultValue="0.5" />
+
+	<Parameter 
+		Name="t2"
+		Description="E2F3 translation rate constant" 
+		DefaultValue="1" />
+
+	<Parameter 
+		Name="d4"
+		Description="E2F3_p degradation rate constant" 
+		DefaultValue="0.5" />
+		
+	<Parameter 
+		Name="ATAD_dTotal"
+		Description="Total concentration of E2F3 target gene DNA" 
+		DefaultValue="10" />
+
+	<Parameter 
+		Name="k3"
+		Description="EWS mediated ATAD transcription rate constant" 
+		DefaultValue="5" />
+		
+	<Parameter 
+		Name="c3"
+		Description="EWS - ATAD (dis-)association ratio" 
+		DefaultValue="1" />
+
+	<Parameter 
+		Name="k4"
+		Description="E2F3 mediated ATAD transcription rate constant" 
+		DefaultValue="3" />
+
+	<Parameter 
+		Name="c4"
+		Description="E2F3 - ATAD (dis-)association ratio" 
+		DefaultValue="1" />
+
+	<Parameter 
+		Name="d5"
+		Description="ATAD_r  degradation rate constant" 
+		DefaultValue="0.5" />
+	
+</VectorField>

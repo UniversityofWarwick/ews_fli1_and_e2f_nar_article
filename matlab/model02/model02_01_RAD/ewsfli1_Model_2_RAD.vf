@@ -1,0 +1,102 @@
+<?xml version="1.0" ?> 
+<VectorField Name="ewsfli1_Model_2_RAD" Description="EWS-FLI1 knockdown model 02_01_01">
+
+	<StateVariable 
+		Name="EWS_r" 
+		Description="EWS mRNA" 
+		Formula="-m1*EWS_r - d1*EWS_r + a1" 
+		DefaultInitialCondition="50" />
+
+	<StateVariable 
+		Name="EWS_p" 
+		Description="EWS protein" 
+		Formula="t1*EWS_r - d2*EWS_p" 
+		DefaultInitialCondition="99.9" />
+
+	<StateVariable 
+		Name="E2F3_r" 
+		Description="E2F3 mRNA" 
+		Formula="k1*(EWS_p*E2F3_p) / (EWS_p*E2F3_p + c1) - d3*E2F3_r" 
+		DefaultInitialCondition="41.6" />
+
+	<StateVariable 
+		Name="E2F3_p" 
+		Description="E2F3 protein" 
+		Formula="t2*E2F3_r - d4*E2F3_p" 
+		DefaultInitialCondition="83.2" />
+
+	<StateVariable 
+		Name="RAD_r" 
+		Description="E2F3 target gene mRNA" 
+		Formula="k2*(EWS_p*E2F3_p) / (EWS_p*E2F3_p + c2 ) - d5*RAD_r" 
+		DefaultInitialCondition="81.4" />
+
+     <SteadyStateParams
+        ExcludeList="m1" />
+
+    <Parameter 
+		Name="a1" 
+		Description="EWS transcription rate times EWS dna concentration"
+		DefaultValue="10" />
+
+	<Parameter 
+		Name="m1" 
+		Description="Total shRNA times kinetic constant" 
+		DefaultValue="10" />
+
+	<Parameter 
+		Name="d1" 
+		Description="EWS_r degradation rate constant" 
+		DefaultValue="0" />
+	
+	<Parameter 
+		Name="t1" 
+		Description="EWS translation rate constant" 
+		DefaultValue="1" />
+		
+	<Parameter 
+		Name="d2" 
+		Description="EWS_p degradation rate constant" 
+		DefaultValue="0.5" />
+	
+	<Parameter 
+		Name="k1" 
+		Description="Compex E2F3 transcription rate constant times E2F3 dna total" 
+		DefaultValue="30" />
+		
+	<Parameter 
+		Name="c1" 
+		Description="Complex - E2F3 (dis-)association ratio" 
+		DefaultValue="1" />
+
+	<Parameter 
+		Name="k2" 
+		Description="Compex RAD transcription rate constant times RAD dna total" 
+		DefaultValue="10" />
+
+	<Parameter 
+		Name="c2" 
+		Description="Complex RAD (dis-)association ratio" 
+		DefaultValue="1" />
+	
+	<Parameter 
+		Name="d3" 
+		Description="E2F3_r degradation rate constant" 
+		DefaultValue="0.5" />
+
+	<Parameter 
+		Name="t2"
+		Description="E2F3 translation rate constant" 
+		DefaultValue="1" />
+
+	<Parameter 
+		Name="d4"
+		Description="E2F3_p degradation rate constant" 
+		DefaultValue="0.5" />
+		
+	<Parameter 
+		Name="d5"
+		Description="RAD_r  degradation rate constant" 
+		DefaultValue="0.5" />
+	
+</VectorField>
