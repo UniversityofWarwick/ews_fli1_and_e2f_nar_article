@@ -1,9 +1,6 @@
-ews_fli1_and_e2f_nar_article
-============================
-
 This repository provides the MATLAB code used for doing the statistical analysis of the research article
 "EWS-FLI1 employs an E2F switch to drive target gene expression", 
-R. Schwentner, T. Papamarkou2, M.O. Kauer, V. Stathopoulos, F. Yang, Sv. Bilke, P.S. Meltzer, M. Girolami, H. Kovar,
+R. Schwentner, T. Papamarkou, M.O. Kauer, V. Stathopoulos, F. Yang, Sv. Bilke, P.S. Meltzer, M. Girolami, H. Kovar,
 *Nucleic Acids Research*
 (to appear soon).
 
@@ -25,4 +22,4 @@ the files holding the specified models. Furthermore, the following dependencies 
 * ginac-1.6.2
 * mxml-2.6
 * sundials-2.5.0
-* vfgen-2.4.1 (use the patched vfgen folder in dependencies/vfgen-2.4.1)
+* vfgen-2.4.1 (use the patched vfgen implementation in dependencies/vfgen-2.4.1)
