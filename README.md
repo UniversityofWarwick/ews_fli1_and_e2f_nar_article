@@ -4,8 +4,7 @@ R. Schwentner, T. Papamarkou, M.O. Kauer, V. Stathopoulos, F. Yang, Sv. Bilke, P
 *Nucleic Acids Research*
 (to appear soon).
 
-The statistical analysis employs Bayesian model selection in order to identify the most suitable ODE system for the
-the regulation of E2F3 target genes among a pool of four candidate mechanistic models. From a technical point of view,
+The statistical analysis employs Bayesian model selection in order to identify the most suitable ODE system for the regulation of E2F3 target genes among a pool of four candidate mechanistic models. From a technical point of view,
 population MCMC has been used in conjunction with the simplified manifold Metropolis-adjusted Langevin algorithm
 (SMMALA), see the article for details. The population MCMC scheme was run in parallel on a cluster using the MATLAB
 inteface to MPI.
@@ -18,8 +17,8 @@ existing code as a guide.
 To bring the code to an operational state, the user would need to set up some absolute paths pointing to the data and
 the files holding the specified models. Furthermore, the following dependencies need to be installed on the cluster:
 
-* cln-1.3.2
-* ginac-1.6.2
-* mxml-2.6
-* sundials-2.5.0
-* vfgen-2.4.1 (use the patched vfgen implementation in dependencies/vfgen-2.4.1)
+* cln-1.3.2,
+* ginac-1.6.2,
+* mxml-2.6,
+* sundials-2.5.0,
+* vfgen-2.4.1 (use the patched vfgen implementation in dependencies/vfgen-2.4.1).
